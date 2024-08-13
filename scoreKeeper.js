@@ -14,6 +14,8 @@ p1Button.addEventListener("click", () => {
   if (p1Score == finalScore.value) {
     p1Button.disabled = true;
     p2Button.disabled = true;
+    p1Display.style.color = "green";
+    p2Display.style.color = "red";
   }
 });
 p2Button.addEventListener("click", () => {
@@ -22,12 +24,16 @@ p2Button.addEventListener("click", () => {
   if (p2Score == finalScore.value) {
     p1Button.disabled = true;
     p2Button.disabled = true;
+    p1Display.style.color = "red";
+    p2Display.style.color = "green";
   }
 });
 
 reset.addEventListener("click", () => {
   p1Display.textContent = 0;
   p2Display.textContent = 0;
+  p1Score = 0;
+  p2Score = 0;
   p1Button.disabled = false;
   p2Button.disabled = false;
 });
