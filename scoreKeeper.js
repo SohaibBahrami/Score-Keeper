@@ -22,10 +22,12 @@ p2Button.addEventListener("click", () => {
   if (p2Score == finalScore.value) {
     p1Button.disabled = true;
     p2Button.disabled = true;
-  } 
+  }
 });
 
 reset.addEventListener("click", () => {
   p1Display.textContent = 0;
   p2Display.textContent = 0;
+  p1Button.disabled = false;
+  p2Button.disabled = false;
 });
