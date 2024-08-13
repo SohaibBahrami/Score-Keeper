@@ -1,18 +1,31 @@
-let p1Start = document.querySelector("#p1Display");
-let p2Start = document.querySelector("#p2Display");
-// let finalScore = [document.querySelectorAll("option")];
-// console.log(finalScore.value);
+const p1Display = document.querySelector("#p1Display");
+const p2Display = document.querySelector("#p2Display");
+let finalScore = document.querySelector("#playto");
 
 const p1Button = document.querySelector("#p1Button");
 const p2Button = document.querySelector("#p2Button");
+const reset = document.querySelector("#reset");
+let p1Score = 0;
+let p2Score = 0;
 
 p1Button.addEventListener("click", () => {
-  p1Start.innerHTML = scoreKeeper(p1Start.innerHTML);
+  p1Score++;
+  p1Display.textContent = p1Score;
+  if (p1Score == finalScore.value) {
+    p1Button.disabled = true;
+    p2Button.disabled = true;
+  }
 });
 p2Button.addEventListener("click", () => {
-  p2Start.innerHTML = scoreKeeper(p2Start.innerHTML);
+  p2Score++;
+  p2Display.textContent = p2Score;
+  if (p2Score == finalScore.value) {
+    p1Button.disabled = true;
+    p2Button.disabled = true;
+  } 
 });
 
-const scoreKeeper = function (playerScore) {
-  return parseInt(playerScore) + 1;
-};
+reset.addEventListener("click", () => {
+  p1Display.textContent = 0;
+  p2Display.textContent = 0;
+});
